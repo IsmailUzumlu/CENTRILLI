@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name = "regression suite">
+    <test name="Selenium test">
+        <classes>
+            <class  name = "com.cydeo.tests.TestNG_Selenium"></class>
+        </classes>
+    </test>
+
+    <test name="tests package">
+        <packages>
+            <package name="com.cydeo.tests"></package>
+        </packages>
+    </test>
+</suite>

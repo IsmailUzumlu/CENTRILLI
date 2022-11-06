@@ -7,12 +7,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.annotations.Test;
 
 public class Test_Vehicle_odometer extends TestBase {
 
 
+    @Test
 
-    public static void main(String[] args) throws InterruptedException {
+    public static  void Test_Odometer () throws InterruptedException {
 
         WebDriverManager.chromedriver().setup();;
         WebDriver driver = new ChromeDriver();
@@ -27,6 +29,7 @@ public class Test_Vehicle_odometer extends TestBase {
 //        6. Verify that user can find the new created Odometer value under Odometer list by using search box.
 //        7. Verify that user can change Odometer display to Kanban / List / Graph
 //        8- Verify that the number of Odometer increased 1
+
 
         driver.get("https://centrilli.com/");
         WebElement loginPage = driver.findElement(By.xpath("//a[.='Log in']"));
@@ -70,10 +73,17 @@ public class Test_Vehicle_odometer extends TestBase {
         String beforeSaveTitle = "New - Odoo";
         Assert.assertEquals(afterSaveTitle,beforeSaveTitle,"the title changed :");
 
+        WebElement attachmentsBtn = driver.findElement(By.xpath("//button[@class='o_dropdown_toggler_btn btn btn-sm dropdown-toggle']"));
+        attachmentsBtn.isDisplayed();
 
+        WebElement actionBtn = driver.findElement(By.xpath("//button[normalize-space()='Action']"));
+        actionBtn.isDisplayed();
 
         driver.close();
 
+        }
+
+
+
     }
 
-}
